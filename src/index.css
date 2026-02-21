@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@400..700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-off-white: #FAFAFA;
+  --color-cream: #FDF8F5;
+
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4A4A4A;
+  --color-text-tertiary: #888888;
+  --color-text-light: #BBBBBB;
+
+  --color-rose-light: #F5D5D8;
+  --color-rose: #E8B4B8;
+  --color-rose-dark: #D4929A;
+
+  --color-gold-light: #E8C9A8;
+  --color-gold: #D4A574;
+  --color-gold-dark: #B8864A;
+
+  /* Shadows */
+  --shadow-1: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-4: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-glow-rose: 0 0 40px rgba(232, 180, 184, 0.3);
+  --shadow-glow-gold: 0 0 40px rgba(212, 165, 116, 0.3);
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-handwriting: 'Dancing Script', cursive;
+  --font-bengali: 'Hind Siliguri', sans-serif;
+  --font-bengali-serif: 'Noto Serif Bengali', serif;
+
+  /* Spacing */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+
+  /* Border Radius */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+
+  /* Layout */
+  --content-max-width: 440px;
+  --section-padding: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.text-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.text-display-large {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text-display-medium {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text-heading-1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.text-heading-2 {
+  font-family: var(--font-body);
+  font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.text-handwriting-large {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.text-handwriting-regular {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.text-bengali-display {
+  font-family: var(--font-bengali-serif);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.text-bengali-body {
+  font-family: var(--font-bengali);
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
