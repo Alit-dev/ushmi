@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2, VolumeX } from 'lucide-react';
+import config from '../../config/config.json';
 import bgAudio from '../../assets/audio/Late Night Happy Birthday, Ushmi (1).mp3';
 
 const CountdownTimer = ({ onUnlock }) => {
-    // Target Date: February 22, 2026 00:00:00
-    const targetDate = new Date("February 22, 2026 00:00:00").getTime();
+    // Target Date from config with BD timezone offset (GMT+6)
+    const targetDate = new Date(`${config.targetDate} +06:00`).getTime();
 
     const [timeLeft, setTimeLeft] = useState({
         days: 0,

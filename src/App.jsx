@@ -17,6 +17,7 @@ import Section13_FinalMessage from './components/sections/Section13_FinalMessage
 import Section14_CandleBlow from './components/sections/Section14_CandleBlow'
 import Section15_CelebrationFinale from './components/sections/Section15_CelebrationFinale'
 import CountdownTimer from './components/sections/CountdownTimer'
+import config from './config/config.json'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,11 @@ function App() {
 
   // Calculate if we need to lock the site initially
   const [isLocked, setIsLocked] = useState(() => {
-    const target = new Date("February 22, 2026 00:00:00").getTime();
+    // If lock is false in config, unlock immediately
+    if (config.lock === false) return false;
+
+    // Otherwise check target date with BD timezone offset (GMT+6)
+    const target = new Date(`${config.targetDate} +06:00`).getTime();
     return new Date().getTime() < target;
   });
 
