@@ -13,6 +13,7 @@ import Section10_WishesWall from './components/sections/Section10_WishesWall'
 import Section11_AbstractConnection from './components/sections/Section11_AbstractConnection'
 import Section11b_PhotoMemories from './components/sections/Section11b_PhotoMemories'
 import Section12_FutureHopes from './components/sections/Section12_FutureHopes'
+import Section12b_Imagination from './components/sections/Section12b_Imagination'
 import Section13_FinalMessage from './components/sections/Section13_FinalMessage'
 import Section14_CandleBlow from './components/sections/Section14_CandleBlow'
 import Section15_CelebrationFinale from './components/sections/Section15_CelebrationFinale'
@@ -63,6 +64,7 @@ function App() {
           <Section10_WishesWall />
           <Section11_AbstractConnection />
           <Section11b_PhotoMemories />
+          <Section12b_Imagination />
           <Section12_FutureHopes />
           <Section13_FinalMessage />
           <Section14_CandleBlow onBlown={() => setCandleBlown(true)} />
