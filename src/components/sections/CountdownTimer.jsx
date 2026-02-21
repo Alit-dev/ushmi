@@ -15,8 +15,18 @@ const CountdownTimer = ({ onUnlock }) => {
         seconds: 0
     });
 
-    const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+    const [isAudioPlaying, setIsAudioPlaying] = useState(true);
     const audioRef = useRef(null);
+
+    // Attempt to autoplay audio on mount
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.play().catch(e => {
+                console.log("Autoplay blocked by browser policy:", e);
+                setIsAudioPlaying(false); // Revert to false if browser blocks autoplay
+            });
+        }
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -208,6 +218,7 @@ const CountdownTimer = ({ onUnlock }) => {
                 ref={audioRef}
                 src={bgAudio}
                 preload="auto"
+                autoPlay
                 loop
             />
         </section>
